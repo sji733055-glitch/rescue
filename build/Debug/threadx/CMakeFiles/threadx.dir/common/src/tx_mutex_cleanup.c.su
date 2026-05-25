@@ -1,0 +1,2 @@
+D:/robomaster/rm_embedded/rescue/threadx/common/src/tx_mutex_cleanup.c:70:7:_tx_mutex_cleanup	4	static
+D:/robomaster/rm_embedded/rescue/threadx/common/src/tx_mutex_cleanup.c:251:7:_tx_mutex_thread_release	16	static

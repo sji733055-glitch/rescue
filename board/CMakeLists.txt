@@ -20,6 +20,8 @@ endif()
 
 # Set the project name
 set(CMAKE_PROJECT_NAME base)
+#Threadx configuration for Cortex-M4/GCC
+set(THREADX_ARCH cortex_m4)
 
 # Enable compile command to ease indexing with e.g. clangd
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
@@ -36,8 +38,8 @@ add_executable(${CMAKE_PROJECT_NAME})
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
-# 添加Threadx
-# add_subdirectory(../../threadx threadx)
+# Add Threadx RTOS
+add_subdirectory(../threadx threadx)
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
@@ -65,6 +67,6 @@ list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
-
+    azrtos::threadx
     # Add user defined libraries
 )
