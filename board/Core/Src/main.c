@@ -23,6 +23,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "tx_api.h"
 
 /* USER CODE END Includes */
 
@@ -91,7 +92,7 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
-
+  tx_kernel_enter();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -152,7 +153,10 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void tx_application_define(void *first_unused_memory)
+{
+    
+}
 /* USER CODE END 4 */
 
 /**
