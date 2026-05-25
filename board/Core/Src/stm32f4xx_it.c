@@ -166,9 +166,9 @@ void DebugMon_Handler(void)
   /* USER CODE END DebugMonitor_IRQn 1 */
 }
 
-/**
-  * @brief This function handles Pendable request for system service.
-  */
+// /**
+//   * @brief This function handles Pendable request for system service.
+//   */
 // void PendSV_Handler(void)
 // {
 //   /* USER CODE BEGIN PendSV_IRQn 0 */
@@ -179,9 +179,9 @@ void DebugMon_Handler(void)
 //   /* USER CODE END PendSV_IRQn 1 */
 // }
 
-/**
-  * @brief This function handles System tick timer.
-  */
+// /**
+//   * @brief This function handles System tick timer.
+//   */
 // void SysTick_Handler(void)
 // {
 //   /* USER CODE BEGIN SysTick_IRQn 0 */
@@ -237,7 +237,7 @@ void EXTI9_5_IRQHandler(void)
 
   /* USER CODE END EXTI9_5_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_5);
-  HAL_GPIO_EXTI_IRQHandler(KEY_Pin);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_6);
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_9);
   /* USER CODE BEGIN EXTI9_5_IRQn 1 */
 

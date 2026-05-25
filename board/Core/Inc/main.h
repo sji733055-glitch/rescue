@@ -61,9 +61,6 @@ void Error_Handler(void);
 #define Motor_2PWMA_GPIO_Port GPIOA
 #define Motor_2PWMB_Pin GPIO_PIN_2
 #define Motor_2PWMB_GPIO_Port GPIOA
-#define KEY_Pin GPIO_PIN_6
-#define KEY_GPIO_Port GPIOA
-#define KEY_EXTI_IRQn EXTI9_5_IRQn
 #define MPU_INT_Pin GPIO_PIN_10
 #define MPU_INT_GPIO_Port GPIOB
 #define MPU_INT_EXTI_IRQn EXTI15_10_IRQn

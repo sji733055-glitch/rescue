@@ -7,3 +7,6 @@ D:/robomaster/rm_embedded/rescue/build/Debug/cmake/stm32cubemx/CMakeFiles/rebuil
 D:/robomaster/rm_embedded/rescue/build/Debug/threadx/CMakeFiles/threadx.dir
 D:/robomaster/rm_embedded/rescue/build/Debug/threadx/CMakeFiles/edit_cache.dir
 D:/robomaster/rm_embedded/rescue/build/Debug/threadx/CMakeFiles/rebuild_cache.dir
+D:/robomaster/rm_embedded/rescue/build/Debug/utils/CMakeFiles/utils.dir
+D:/robomaster/rm_embedded/rescue/build/Debug/utils/CMakeFiles/edit_cache.dir
+D:/robomaster/rm_embedded/rescue/build/Debug/utils/CMakeFiles/rebuild_cache.dir
