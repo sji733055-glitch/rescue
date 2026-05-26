@@ -4,6 +4,7 @@
 		"D:/robomaster/rm_embedded/rescue/build/Debug/cmake_install.cmake",
 		"D:/robomaster/rm_embedded/rescue/build/Debug/cmake/stm32cubemx/cmake_install.cmake",
 		"D:/robomaster/rm_embedded/rescue/build/Debug/threadx/cmake_install.cmake",
+		"D:/robomaster/rm_embedded/rescue/build/Debug/bsp/cmake_install.cmake",
 		"D:/robomaster/rm_embedded/rescue/build/Debug/utils/cmake_install.cmake"
 	],
 	"Parallel" : false

@@ -118,7 +118,7 @@ CMAKE_EXPORT_BUILD_DATABASE:BOOL=
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=D:/robomaster/rm_embedded/rescue/build/Debug/CMakeFiles/pkgRedirects
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/rescue_car
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/base
 
 //Program used to build from build.ninja files.
 CMAKE_MAKE_PROGRAM:FILEPATH=C:/msys64/mingw64/bin/ninja.exe
@@ -242,15 +242,6 @@ base_IS_TOP_LEVEL:STATIC=ON
 base_SOURCE_DIR:STATIC=D:/robomaster/rm_embedded/rescue/board
 
 //Value Computed by CMake
-rescue_car_BINARY_DIR:STATIC=D:/robomaster/rm_embedded/rescue/build/Debug
-
-//Value Computed by CMake
-rescue_car_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-rescue_car_SOURCE_DIR:STATIC=D:/robomaster/rm_embedded/rescue/board
-
-//Value Computed by CMake
 threadx_BINARY_DIR:STATIC=D:/robomaster/rm_embedded/rescue/build/Debug/threadx
 
 //Value Computed by CMake
@@ -371,7 +362,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJDUMP
 CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
 //Platform information initialized

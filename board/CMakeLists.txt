@@ -41,7 +41,7 @@ add_subdirectory(cmake/stm32cubemx)
 # Add Threadx RTOS
 add_subdirectory(../threadx threadx)
 # Add shared libraries
-# add_subdirectory(../board/bsp ${CMAKE_CURRENT_BINARY_DIR}/bsp)
+add_subdirectory(../board/bsp ${CMAKE_CURRENT_BINARY_DIR}/bsp)
 add_subdirectory(../utils ${CMAKE_CURRENT_BINARY_DIR}/utils)
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
@@ -70,7 +70,7 @@ list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
 target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
     azrtos::threadx
-    # bsp
+    bsp
     utils
     # Add user defined libraries
 )
