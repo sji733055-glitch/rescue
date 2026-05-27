@@ -127,11 +127,11 @@ uint64_t BSP_DWT_GetTimeline_us(void)
     return (uint64_t)SysTime.s * 1000000ULL + (uint64_t)SysTime.ms * 1000ULL + SysTime.us;
 }
 
-void BSP_DWT_Delay(float Delay)
+void BSP_DWT_Delay(uint32_t Delay_us)
 {
 
     uint32_t tickstart = DWT->CYCCNT;
-    uint32_t wait_cycles = (uint32_t)(Delay * (float)CPU_FREQ_Hz);
+    uint32_t wait_cycles = Delay_us*CPU_FREQ_Hz_us;
 
     // 避免溢出导致的死循环
     while ((DWT->CYCCNT - tickstart) < wait_cycles)

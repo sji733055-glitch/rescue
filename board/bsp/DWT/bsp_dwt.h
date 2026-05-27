@@ -79,11 +79,11 @@ float BSP_DWT_GetTimeline_ms(void);
 uint64_t BSP_DWT_GetTimeline_us(void);
 
 /**
- * @brief DWT延时函数,单位为秒/s
+ * @brief DWT延时函数,单位为毫秒/us
  * @attention 该函数不受中断是否开启的影响,可以在临界区和关闭中断时使用
  * @note 禁止在rtos初始化完成之前或者中断临界区使用HAL_Delay(),tx_thread_sleep()函数,应使用本函数
- * @param Delay 延时时间,单位为秒/s
+ * @param Delay 延时时间,单位为毫秒/us
  */
-void BSP_DWT_Delay(float Delay);
+void BSP_DWT_Delay(uint32_t Delay_us);
 
 #endif // _BSP_DWT_H_

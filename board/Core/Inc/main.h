@@ -57,10 +57,14 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define PS2_CS_Pin GPIO_PIN_13
+#define PS2_CS_GPIO_Port GPIOC
 #define Motor_2PWMA_Pin GPIO_PIN_0
 #define Motor_2PWMA_GPIO_Port GPIOA
 #define Motor_2PWMB_Pin GPIO_PIN_2
 #define Motor_2PWMB_GPIO_Port GPIOA
+#define PS2_MISO_Pin GPIO_PIN_5
+#define PS2_MISO_GPIO_Port GPIOA
 #define MPU_INT_Pin GPIO_PIN_10
 #define MPU_INT_GPIO_Port GPIOB
 #define MPU_INT_EXTI_IRQn EXTI15_10_IRQn
@@ -88,6 +92,10 @@ void Error_Handler(void);
 #define Motor_1PWMB_GPIO_Port GPIOC
 #define MPU_SCL_Pin GPIO_PIN_8
 #define MPU_SCL_GPIO_Port GPIOA
+#define PS2_CLK_Pin GPIO_PIN_11
+#define PS2_CLK_GPIO_Port GPIOC
+#define PS2_MOSI_Pin GPIO_PIN_12
+#define PS2_MOSI_GPIO_Port GPIOC
 #define Servo2_Pin GPIO_PIN_4
 #define Servo2_GPIO_Port GPIOB
 #define MPU_SDA_Pin GPIO_PIN_9

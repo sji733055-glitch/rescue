@@ -28,7 +28,6 @@ static uint8_t find_empty_slot(void)
     }
     return MAX_EXTI_CALLBACKS;
 }
-
 static uint8_t get_callback_index(uint16_t pin)
 {
     for (uint8_t i = 0; i < callback_count; i++)
