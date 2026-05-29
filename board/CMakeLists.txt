@@ -43,6 +43,7 @@ add_subdirectory(../threadx threadx)
 # Add shared libraries
 add_subdirectory(../board/bsp ${CMAKE_CURRENT_BINARY_DIR}/bsp)
 add_subdirectory(../utils ${CMAKE_CURRENT_BINARY_DIR}/utils)
+add_subdirectory(../modules ${CMAKE_CURRENT_BINARY_DIR}/modules)
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
@@ -72,5 +73,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     azrtos::threadx
     bsp
     utils
+    modules
     # Add user defined libraries
 )
