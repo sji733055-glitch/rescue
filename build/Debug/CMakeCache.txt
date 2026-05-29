@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Prefer autovectorizable code to one using C intrinsics
+AUTOVECTORIZE:BOOL=OFF
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=D:/robomaster/toolchains/arm-gnu-toolchain/bin/arm-none-eabi-addr2line.exe
 
@@ -233,6 +236,60 @@ CMAKE_TOOLCHAIN_FILE:FILEPATH=D:/robomaster/rm_embedded/rescue/board/cmake/gcc-a
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+CMSISDSP_BINARY_DIR:STATIC=D:/robomaster/rm_embedded/rescue/build/Debug/cmsisdsp/Source
+
+//Value Computed by CMake
+CMSISDSP_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+CMSISDSP_SOURCE_DIR:STATIC=D:/robomaster/rm_embedded/rescue/CMSIS-DSP/Source
+
+//Disable building float16 kernels
+DISABLEFLOAT16:BOOL=ON
+
+//Faster build for Cortex-M. Disable it for A
+FASTBUILD:BOOL=OFF
+
+//Helium acceleration (MVEF and MVEI supported)
+HELIUM:BOOL=OFF
+
+//Helium experimental acceleration
+HELIUMEXPERIMENTAL:BOOL=OFF
+
+//Build for host
+HOST:BOOL=OFF
+
+//Lax vector conversions
+LAXVECTORCONVERSIONS:BOOL=ON
+
+//Loop unrolling
+LOOPUNROLL:BOOL=ON
+
+//Matrix Checks
+MATRIXCHECK:BOOL=OFF
+
+//MVEF intrinsics supported
+MVEF:BOOL=OFF
+
+//Float16 MVE intrinsics supported
+MVEFLOAT16:BOOL=OFF
+
+//MVEI intrinsics supported
+MVEI:BOOL=OFF
+
+//Neon acceleration
+NEON:BOOL=OFF
+
+//Neon experimental acceleration
+NEONEXPERIMENTAL:BOOL=OFF
+
+//Scaling of RIFFT with Neon
+NEON_RIFFT_SCALING:BOOL=ON
+
+//Rounding
+ROUNDING:BOOL=OFF
+
+//Value Computed by CMake
 base_BINARY_DIR:STATIC=D:/robomaster/rm_embedded/rescue/build/Debug
 
 //Value Computed by CMake
@@ -362,7 +419,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJDUMP
 CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
 //Platform information initialized

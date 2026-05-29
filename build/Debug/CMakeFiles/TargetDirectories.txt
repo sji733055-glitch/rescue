@@ -13,3 +13,11 @@ D:/robomaster/rm_embedded/rescue/build/Debug/bsp/CMakeFiles/rebuild_cache.dir
 D:/robomaster/rm_embedded/rescue/build/Debug/utils/CMakeFiles/utils.dir
 D:/robomaster/rm_embedded/rescue/build/Debug/utils/CMakeFiles/edit_cache.dir
 D:/robomaster/rm_embedded/rescue/build/Debug/utils/CMakeFiles/rebuild_cache.dir
+D:/robomaster/rm_embedded/rescue/build/Debug/modules/CMakeFiles/modules.dir
+D:/robomaster/rm_embedded/rescue/build/Debug/modules/CMakeFiles/edit_cache.dir
+D:/robomaster/rm_embedded/rescue/build/Debug/modules/CMakeFiles/rebuild_cache.dir
+D:/robomaster/rm_embedded/rescue/build/Debug/cmsisdsp/CMakeFiles/edit_cache.dir
+D:/robomaster/rm_embedded/rescue/build/Debug/cmsisdsp/CMakeFiles/rebuild_cache.dir
+D:/robomaster/rm_embedded/rescue/build/Debug/cmsisdsp/Source/CMakeFiles/CMSISDSP.dir
+D:/robomaster/rm_embedded/rescue/build/Debug/cmsisdsp/Source/CMakeFiles/edit_cache.dir
+D:/robomaster/rm_embedded/rescue/build/Debug/cmsisdsp/Source/CMakeFiles/rebuild_cache.dir
