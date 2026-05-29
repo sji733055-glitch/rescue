@@ -2,7 +2,7 @@
  * @Author: sji733055-glitch sji733055@gmail.com
  * @Date: 2026-05-27 19:55:55
  * @LastEditors: sji733055-glitch sji733055@gmail.com
- * @LastEditTime: 2026-05-29 10:29:23
+ * @LastEditTime: 2026-05-29 14:04:49
  * @FilePath: \rescue\modules\REMOTE\module_remote.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -36,7 +36,7 @@ static void remote_task_entry(ULONG arg)
 }
 
 
-void module_remote_init()
+void Module_Remote_init(void)
 {
     if(g_initialized) return;
 

@@ -9,10 +9,13 @@
 #ifndef __MODULE_CONFIG_H__
 #define __MODULE_CONFIG_H__
 
+/*REMOTE 参数*/
 #define REMOTE_DEAD_ZONE        10
 #define REMOTE_TASK_STACK_SIZE  1024
 #define REMOTE_TASK_PRIORITY    9
-#define REMOTE_TASK_VT_PRIORITY 8
 
+/* MOTOR 参数 */
+#define MOTOR_TASK_STACK_SIZE   1024
+#define MOTOR_TASK_PRIORITY     12
 
 #endif /* __MODULE_CONFIG_H__ */

@@ -4,5 +4,6 @@
 typedef struct {
     uint8_t channels[4];
 }Remote_data_t;
+void Module_Remote_init(void);
 
 #endif /* __MODULE_REMOTE_H__ */
