@@ -2,7 +2,7 @@
  * @Author: sji733055-glitch sji733055@gmail.com
  * @Date: 2026-05-27 18:34:09
  * @LastEditors: sji733055-glitch sji733055@gmail.com
- * @LastEditTime: 2026-05-27 20:41:20
+ * @LastEditTime: 2026-05-30 13:58:46
  * @FilePath: \rescue\modules\REMOTE\PS2\ps2.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置:
  * https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -61,9 +61,7 @@ void PS2_decode(Remote_data_t *data)
 
     if (rx_buf[2] == 0x5A)
     {
-        data->channels[0] = rx_buf[5];
-        data->channels[1] = rx_buf[6];
-        data->channels[2] = rx_buf[7];
-        data->channels[3] = rx_buf[8];
+        data->channels[0] = rx_buf[3];
+        data->channels[1] = rx_buf[4];
     }
 }
