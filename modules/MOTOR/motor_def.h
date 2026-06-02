@@ -2,7 +2,7 @@
  * @Author: laladuduqq 2807523947@qq.com
  * @Date: 2026-01-26 01:14:35
  * @LastEditors: sji733055-glitch sji733055@gmail.com
- * @LastEditTime: 2026-05-29 13:15:09
+ * @LastEditTime: 2026-05-29 22:09:56
  * @FilePath: /mas_embedded_threadx/modules/MOTOR/motor_def.h
  * @Description:
  */
@@ -32,7 +32,7 @@ typedef enum
 /* 传输层类型 */
 typedef enum
 {
-    MOTOR_TRANSPORT_PWM  = 2,
+    MOTOR_TRANSPORT_PWM = 2,
 } Motor_Transport_e;
 
 /* 电机控制设置 (闭环类型, 反转标志, 反馈来源) */
@@ -52,7 +52,8 @@ typedef struct
 {
     const float *other_angle_feedback_ptr;
     const float *other_speed_feedback_ptr;
-
+    PIDInstance  speed_PID;
+    PIDInstance  angle_PID;
 
     float ref;
     float feedforward_torque; /* 前馈力矩 (Nm)，用于补偿 */
@@ -78,7 +79,7 @@ typedef enum
     /* 舵机 */
     SERVO_GENERIC,
     /* PWM 电机 */
-    PWM_MOTOR,
+    DC_Gear_MOTOR,
 } Motor_Type_e;
 
 /* 电机基本信息 */
@@ -97,6 +98,7 @@ typedef struct
     float single_round_angle; /* 单圈角度 (rad) */
     float total_angle;        /* 总角度 (rad)   */
     float torque_nm;          /* 当前力矩 (Nm)  */
+    float speed_rpm;
 } Motor_Measure_s;
 
 /* 控制器初始化配置 */
@@ -108,7 +110,7 @@ typedef struct
 } Motor_Controller_Init_s;
 
 /*  电机初始化配置
- *  根据 transport 字段选择 transport_config 中的对应成员: 
+ *  根据 transport 字段选择 transport_config 中的对应成员:
  *    MOTOR_TRANSPORT_PWM  → transport_config.pwm
  */
 typedef struct
@@ -121,7 +123,7 @@ typedef struct
 
     union
     {
-        PWM_Init_Config          pwm;
+        PWM_Init_Config pwm;
     } transport_config;
 } Motor_Init_Config_s;
 

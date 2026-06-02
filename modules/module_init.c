@@ -2,7 +2,7 @@
  * @Author: sji733055-glitch sji733055@gmail.com
  * @Date: 2026-05-29 10:29:53
  * @LastEditors: sji733055-glitch sji733055@gmail.com
- * @LastEditTime: 2026-05-29 14:08:06
+ * @LastEditTime: 2026-05-30 14:02:03
  * @FilePath: \rescue\modules\module_init.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */

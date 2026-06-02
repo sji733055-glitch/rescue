@@ -23,9 +23,12 @@ struct Motor_Base
     Motor_Controller_s controller;
     Motor_Measure_s    measure;
 
+    uint32_t DWT_CNT;
+    float dt;
     void *transport_dev;
 
     void (*ControlAndSend)(Motor_Base *motor);
+    void (*FeedbackUpdate)(Motor_Base *motor);
 };
 
 #define MOTOR_GET_DERIVED(base_ptr, derived_type) ((derived_type *)(base_ptr))
@@ -40,5 +43,7 @@ void Motor_Register(Motor_Base *motor);
  * @brief 更新所有电机(motor task里调用)
  */
 void Motor_UpdateAll(void);
+
+void Motor_FeedbackUpdateAll(void);
 
 #endif /* _MOTOR_BASE_H_ */
