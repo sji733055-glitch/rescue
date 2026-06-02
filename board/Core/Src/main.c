@@ -25,7 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "tx_api.h"
-
+#include "car_init.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,7 +102,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -157,7 +157,7 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void tx_application_define(void *first_unused_memory)
 {
-    
+    car_init();
 }
 /* USER CODE END 4 */
 

@@ -1,4 +1,5 @@
 add_library(bsp OBJECT
+    bsp_init.c
     GPIO/bsp_gpio.c
     PWM/bsp_pwm.c
     UART/bsp_uart.c

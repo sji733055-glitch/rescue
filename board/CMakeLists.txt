@@ -44,6 +44,8 @@ add_subdirectory(../threadx threadx)
 add_subdirectory(../board/bsp ${CMAKE_CURRENT_BINARY_DIR}/bsp)
 add_subdirectory(../utils ${CMAKE_CURRENT_BINARY_DIR}/utils)
 add_subdirectory(../modules ${CMAKE_CURRENT_BINARY_DIR}/modules)
+add_subdirectory(../robot ${CMAKE_CURRENT_BINARY_DIR}/robot)
+add_subdirectory(../app ${CMAKE_CURRENT_BINARY_DIR}/app)
 # CMSIS-DSP settings for Cortex-M4
 set(LOOPUNROLL ON CACHE BOOL "Loop unrolling for max performance" FORCE)
 set(DISABLEFLOAT16 ON CACHE BOOL "Disable float16 kernels (not needed for M4)" FORCE)
@@ -83,6 +85,8 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     bsp
     utils
     modules
+    robot
     CMSISDSP
+    app
     # Add user defined libraries
 )
