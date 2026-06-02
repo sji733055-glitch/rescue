@@ -2,8 +2,6 @@
 #define __BSP_SOFTSPI_H__
 #include <stdint.h>
 #include "tx_api.h"
-#include "main.h"
-
 typedef struct SOFT_SPI_Device SOFT_SPI_Device;
 
 #define SOFT_SPI_BUS_NUM 2
@@ -11,18 +9,18 @@ typedef struct SOFT_SPI_Device SOFT_SPI_Device;
 /* 初始化配置结构体 */
 typedef struct
 {
-    CHAR               *spi_name;
+    CHAR *spi_name;
 
-    GPIO_TypeDef       *sck_port;
-    uint16_t            sck_pin;
-    GPIO_TypeDef       *mosi_port;
-    uint16_t            mosi_pin;
-    GPIO_TypeDef       *miso_port;
-    uint16_t            miso_pin;
-    
-    GPIO_TypeDef       *cs_port;
-    uint16_t            cs_pin;
-    uint32_t            delay_us;
+    void    *sck_port;
+    uint16_t sck_pin;
+    void    *mosi_port;
+    uint16_t mosi_pin;
+    void    *miso_port;
+    uint16_t miso_pin;
+
+    void    *cs_port;
+    uint16_t cs_pin;
+    uint32_t delay_us;
 } SOFT_SPI_Config;
 /**
  * @brief  SPI设备初始化

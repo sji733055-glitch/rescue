@@ -12,7 +12,7 @@
 #include "bsp_def.h"
 #include "tx_api.h"
 #include "string.h"
-
+#include "gpio.h"
 #define LOG_TAG "bsp_spi"
 #define LOG_LVL LOG_LVL_WARNING
 #include "ulog_def.h"
@@ -135,7 +135,7 @@ static uint8_t transfer_once(SOFT_SPI_Bus *bus, SOFT_SPI_Device *dev, const uint
 
         for (int i = 0; i < 8; i++)
         {
-            /* A. 移出数据到 MOSI */
+            /*写入数据*/
             if (byte_to_send & (1 << i))
             {
                 mosi_write(bus, GPIO_PIN_SET);
@@ -144,29 +144,28 @@ static uint8_t transfer_once(SOFT_SPI_Bus *bus, SOFT_SPI_Device *dev, const uint
             {
                 mosi_write(bus, GPIO_PIN_RESET);
             }
+            sck_write(bus, GPIO_PIN_SET);
 
-            /* B. 制造时钟下降沿 (SCK 拉低) */
-            sck_write(bus, GPIO_PIN_RESET);
             BSP_DWT_Delay(dev->delay_us);
 
-            /* C. 在低电平期间采样输入线 (MISO) 并利用位移原位组装 */
+            sck_write(bus, GPIO_PIN_RESET);
+
+            BSP_DWT_Delay(dev->delay_us);
+
+            sck_write(bus, GPIO_PIN_SET);
+            /*读取数据*/
             if (miso_read(bus))
             {
                 byte_to_receive |= (1 << i);
             }
-
-            /* D. 恢复时钟高电平 (SCK 拉高) */
-            sck_write(bus, GPIO_PIN_SET);
-            BSP_DWT_Delay(dev->delay_us);
         }
 
-        // 【指针安全保护 2】：只有当接收缓冲区不为空时，才把完全拼装好的纯净字节写回内存
         if (rx_data != NULL)
         {
-            rx_data[byte_idx] = byte_to_receive; // 🛠️ 配合 byte_idx，指针安全向后寻址
+            rx_data[byte_idx] = byte_to_receive;
         }
 
-        BSP_DWT_Delay(dev->delay_us*3);
+        BSP_DWT_Delay(16);
     }
 
     return 0; // 成功
@@ -202,11 +201,11 @@ SOFT_SPI_Device *BSP_SoftSPI_Device_Init(SOFT_SPI_Config *config)
     if (bus->initialized == 0)
     {
         bus->spi_name     = config->spi_name;
-        bus->sck_port     = config->sck_port;
+        bus->sck_port     = (GPIO_TypeDef *)config->sck_port;
         bus->sck_pin      = config->sck_pin;
-        bus->mosi_port    = config->mosi_port;
+        bus->mosi_port    = (GPIO_TypeDef *)config->mosi_port;
         bus->mosi_pin     = config->mosi_pin;
-        bus->miso_port    = config->miso_port;
+        bus->miso_port    = (GPIO_TypeDef *)config->miso_port;
         bus->miso_pin     = config->miso_pin;
         bus->devices_list = NULL;
 
@@ -219,13 +218,13 @@ SOFT_SPI_Device *BSP_SoftSPI_Device_Init(SOFT_SPI_Config *config)
         sck_write(bus, GPIO_PIN_SET);
         bus->initialized = 1;
         LOG_I("Bus %d initialized (hspi=%s)", (int)(bus - soft_spi_bus_table), spi_name);
-    }
+    } 
 
     /* 2. 为新设备分配内存 */
     SOFT_SPI_Device *dev = malloc(sizeof(SOFT_SPI_Device));
     if (dev == NULL) return NULL;
     dev->spi_name = config->spi_name;
-    dev->cs_port  = config->cs_port;
+    dev->cs_port  = (GPIO_TypeDef *)config->cs_port;
     dev->cs_pin   = config->cs_pin;
     dev->delay_us = (config->delay_us == 0) ? 10 : config->delay_us; // 默认10us延迟
 
