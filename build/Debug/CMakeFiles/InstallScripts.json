@@ -7,6 +7,8 @@
 		"D:/robomaster/rm_embedded/rescue/build/Debug/bsp/cmake_install.cmake",
 		"D:/robomaster/rm_embedded/rescue/build/Debug/utils/cmake_install.cmake",
 		"D:/robomaster/rm_embedded/rescue/build/Debug/modules/cmake_install.cmake",
+		"D:/robomaster/rm_embedded/rescue/build/Debug/robot/cmake_install.cmake",
+		"D:/robomaster/rm_embedded/rescue/build/Debug/app/cmake_install.cmake",
 		"D:/robomaster/rm_embedded/rescue/build/Debug/cmsisdsp/cmake_install.cmake",
 		"D:/robomaster/rm_embedded/rescue/build/Debug/cmsisdsp/Source/cmake_install.cmake"
 	],

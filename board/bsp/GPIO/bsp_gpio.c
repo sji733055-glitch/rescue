@@ -7,9 +7,10 @@
 
 typedef struct
 {
-    uint16_t pin;           /* GPIO引脚号 */
-    void (*callback)(void); /* 回调函数 */
-    uint8_t initialized;    /* 是否已初始化 */
+    uint16_t pin;                /* GPIO引脚号 */
+    void (*callback)(void *arg); /* 回调函数 */
+    void   *arg;
+    uint8_t initialized; /* 是否已初始化 */
 } EXTI_Callback_t;
 
 /* 存储EXTI回调的静态数组 */
@@ -41,7 +42,7 @@ static uint8_t get_callback_index(uint16_t pin)
 }
 
 // 对外接口
-uint8_t BSP_GPIO_EXTI_Register(uint16_t pin, void (*callback)())
+uint8_t BSP_GPIO_EXTI_Register(uint16_t pin, void (*callback)(void *arg), void *arg)
 {
     uint8_t index;
 
@@ -76,6 +77,7 @@ uint8_t BSP_GPIO_EXTI_Register(uint16_t pin, void (*callback)())
     /* 存储回调信息 */
     exti_callbacks[index].pin         = pin;
     exti_callbacks[index].callback    = callback;
+    exti_callbacks[index].arg         = arg;
     exti_callbacks[index].initialized = 1;
 
     callback_count++;
@@ -102,6 +104,7 @@ void BSP_GPIO_EXTI_Unregister(uint8_t index)
     /* 清除回调信息 */
     exti_callbacks[index].pin         = 0;
     exti_callbacks[index].callback    = NULL;
+    exti_callbacks[index].arg         = NULL;
     exti_callbacks[index].initialized = 0;
 
     callback_count--;
@@ -115,6 +118,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
     if (index < MAX_EXTI_CALLBACKS && exti_callbacks[index].callback)
     {
-        exti_callbacks[index].callback();
+        exti_callbacks[index].callback(exti_callbacks[index].arg);
     }
 }

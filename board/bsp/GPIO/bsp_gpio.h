@@ -19,7 +19,7 @@
  * @param callback 回调函数
  * @return uint8_t 已注册回调的索引，失败返回0xFF
  */
-uint8_t BSP_GPIO_EXTI_Register(uint16_t pin, void (*callback)(void));
+uint8_t BSP_GPIO_EXTI_Register(uint16_t pin, void (*callback)(void *arg), void *arg);
 
 /**
  * @brief 注销外部中断回调函数
